@@ -4,6 +4,8 @@ import Link from 'next/link';
 import styles from './page.module.css'
 import { useChat } from 'ai/react'
 
+// https://vercel.com/blog/introducing-the-vercel-ai-sdk
+// https://sdk.vercel.ai/docs/getting-started
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat()
   return <div>
