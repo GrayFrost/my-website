@@ -1,0 +1,13 @@
+.demoWrapper {
+  background: orange;
+}
+
+.cardList {
+  display: flex;
+}
+.card {
+  width: 200px;
+  height: 250px;
+  box-shadow: 5px 5px 15px #ccc;
+  border-radius: 10px;
+}

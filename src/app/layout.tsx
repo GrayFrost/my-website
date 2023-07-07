@@ -5,8 +5,8 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: '我的网站',
-  description: '我的网站的描述啊啊啊啊',
+  title: 'Z',
+  description: '行止由心',
 }
 
 export default function RootLayout({
@@ -17,15 +17,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>common layout</div>
-        <div>
+        <header>头部</header>
+        <main>
           <Link href='/'>首页</Link>
           <Link href='/blog'>博客</Link>
           <Link href='/demo'>Demo</Link>
           <Link href='/life'>生活</Link>
           <Link href='/about'>关于</Link>
-        </div>
+        </main>
         {children}
+        <footer>底部</footer>
       </body>
     </html>
   )
