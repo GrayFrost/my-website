@@ -5,13 +5,13 @@ export default function Demo() {
   return (
     <div>
       <div className="flex">
-        <div className="bg-white shadow-md rounded text-black w-48 h-48">
+        <div className="card-test">
           卡片1
         </div>
-        <div className="bg-white shadow-md rounded text-black w-48 h-48">
+        <div className="card-test">
           卡片2
         </div>
-        <div className="bg-white shadow-md rounded text-black w-48 h-48">
+        <div className="card-test">
           卡片3
         </div>
       </div>
