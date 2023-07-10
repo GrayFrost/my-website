@@ -1,7 +1,8 @@
-'use client'
+// 'use client'
 import Image from 'next/image'
 import Link from 'next/link';
 import styles from './page.module.css'
+import HelloWorld from './hello.mdx'
 
 // https://vercel.com/blog/introducing-the-vercel-ai-sdk
 // https://sdk.vercel.ai/docs/getting-started
@@ -13,5 +14,6 @@ export default function Home() {
       <li>换肤</li>
       <li>demo卡片动效</li>
     </ul>
+    <HelloWorld />
   </div>
 }
