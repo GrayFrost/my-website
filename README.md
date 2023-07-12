@@ -28,6 +28,10 @@ theme
 
 tailwind
 
+404
+
+lottie
+
 
 TODO
 

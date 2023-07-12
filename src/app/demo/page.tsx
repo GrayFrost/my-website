@@ -15,9 +15,11 @@ export default function Demo() {
             卡片2
           </div>
         </Link>
-        <div className="card-test">
-          卡片3
-        </div>
+        <Link href="/demo/teacher">
+          <div className="card-test">
+            卡片3
+          </div>
+        </Link>
       </div>
     </div>
   );

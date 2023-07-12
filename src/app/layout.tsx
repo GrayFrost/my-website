@@ -22,7 +22,7 @@ export default function RootLayout({
         <main>
           <Link href='/'>首页</Link>
           <Link href='/blog'>博客</Link>
-          <Link href='/demo'>Demo</Link>
+          <Link href='/demo'>演示</Link>
           <Link href='/life'>生活</Link>
           <Link href='/about'>关于</Link>
         </main>
