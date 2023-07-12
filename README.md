@@ -33,6 +33,9 @@ tailwind
 lottie
 
 
+浏览器支持：chrome、safari、firefox、edge
+
+
 TODO
 
 判断哪些是client component，尽量移到组件数的尽头叶子节点端。
