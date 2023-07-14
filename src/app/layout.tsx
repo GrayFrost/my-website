@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import Link from 'next/link';
-
+import NavComponent from './nav-component'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,15 +17,10 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body>
-        <header>头部</header>
+        <NavComponent />
         <main>
-          <Link href='/'>首页</Link>
-          <Link href='/blog'>博客</Link>
-          <Link href='/demo'>演示</Link>
-          <Link href='/life'>生活</Link>
-          <Link href='/about'>关于</Link>
+          {children}
         </main>
-        {children}
         <footer>底部</footer>
       </body>
     </html>

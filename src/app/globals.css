@@ -7,3 +7,19 @@
     @apply bg-white shadow-md rounded text-black w-48 h-48;
   }
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  height: 64px;
+  background-color: pink;
+}
+
+body > footer {
+  height: 80px;
+  background-color: aquamarine;
+  margin-top: auto;
+}
