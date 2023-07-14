@@ -15,5 +15,6 @@ export default function Home() {
       <li>demo卡片动效</li>
     </ul>
     <HelloWorld />
+    <div className='h-[500px] bg-slate-400'></div>
   </div>
 }

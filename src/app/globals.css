@@ -4,7 +4,7 @@
 
 @layer components {
   .card-test {
-    @apply bg-white shadow-md rounded text-black w-48 h-48;
+    @apply bg-white shadow-md rounded text-black w-48 h-48 hover:shadow-lg;
   }
 }
 

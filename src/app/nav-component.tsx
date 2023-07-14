@@ -9,7 +9,7 @@ export default function NavComponent() {
   const pathname = usePathname();
   console.log('zzh router信息', router, params, pathname);
   return pathname === '/' ? (
-    <nav>
+    <nav className='flex items-center'>
       <Link href='/'>首页</Link>
       <Link href='/blog'>博客</Link>
       <Link href='/demo'>演示</Link>

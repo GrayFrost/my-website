@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export default function Demo() {
   return (
     <div>
-      <div className="flex">
+      <div className="flex justify-around">
         <Link href="/demo/hello">
           <div className="card-test">
             卡片1
