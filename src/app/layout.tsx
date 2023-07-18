@@ -16,12 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body>
+      <body className="min-h-screen flex flex-col">
         <NavComponent />
         <main>
           {children}
         </main>
-        <footer>底部</footer>
+        <footer className="h-[80px] bg-slate-500 mt-auto">底部</footer>
       </body>
     </html>
   )

@@ -1,4 +1,5 @@
 import Graph from './graph';
+import TeacherMd from './teacher.mdx';
 
 export default function Teacher() {
   return (
@@ -9,7 +10,7 @@ export default function Teacher() {
         <li>2023-07-07 高中信息技术教师资格证考试报名</li>
       </ul>
       <article className="mx-auto prose prose-slate lg:prose-xl">
-        <h2>科目一</h2>
+        {/* <h2>科目一</h2>
         <h3>素质教育的内涵</h3>
         <ul>
           <li>提高国民素质为根本宗旨</li>
@@ -24,7 +25,8 @@ export default function Teacher() {
           <li>提倡教学从“教会学生知识”转向“教会学生学习”</li>
           <li>提倡教学从“重结果轻过程"转向“重结果更重过程"</li>
           <li>提倡教学从”关注学科"到“关注人"</li>
-        </ul>
+        </ul> */}
+        <TeacherMd />
       </article>
       <section>
         <h2>知识图谱</h2>

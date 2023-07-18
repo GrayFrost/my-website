@@ -9,12 +9,12 @@ export default function NavComponent() {
   const pathname = usePathname();
   console.log('zzh router信息', router, params, pathname);
   return pathname === '/' ? (
-    <nav className='flex items-center'>
-      <Link href='/'>首页</Link>
-      <Link href='/blog'>博客</Link>
-      <Link href='/demo'>演示</Link>
-      <Link href='/life'>生活</Link>
+    <nav className='flex items-center justify-end px-16 h-[64px] bg-[pink]'>
+      <Link href='/' className='pr-16'>首页</Link>
+      <Link href='/blog' className='pr-16'>博客</Link>
+      <Link href='/demo' className='pr-16'>演示</Link>
+      <Link href='/life' className='pr-16'>生活</Link>
       <Link href='/about'>关于</Link>
     </nav>
-  ) : <nav>简化版路由</nav>
+  ) : <nav className="h-[64px] bg-gray-400">简化版路由</nav>
 }
