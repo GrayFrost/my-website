@@ -9,11 +9,6 @@ import HelloWorld from './hello.mdx'
 export default function Home() {
   return <div>
     <h1 className="text-3xl font-bold underline">Hello Next.js!</h1>
-    <ul>
-      <li>首页动效</li>
-      <li>换肤</li>
-      <li>demo卡片动效</li>
-    </ul>
     <HelloWorld />
     <div className='h-[500px] bg-slate-400'></div>
   </div>
