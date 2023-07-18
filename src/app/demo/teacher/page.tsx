@@ -8,7 +8,7 @@ export default function Teacher() {
         <li>2023-06-30 普通话等级考试</li>
         <li>2023-07-07 高中信息技术教师资格证考试报名</li>
       </ul>
-      <article className="prose prose-slate lg:prose-xl">
+      <article className="mx-auto prose prose-slate lg:prose-xl">
         <h2>科目一</h2>
         <h3>素质教育的内涵</h3>
         <ul>
