@@ -36,6 +36,7 @@ export default function NavComponent() {
       {navs.map((item, index) => {
         return (
           <Link
+            key={item.value}
             href={item.value}
             className={`${index !== navs.length - 1 ? "pr-16" : ""}`}
           >
