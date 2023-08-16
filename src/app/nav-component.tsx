@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter, useParams, usePathname } from "next/navigation";
 import Link from "next/link";
+import { ThemeChanger } from './theme-changer';
 
 export default function NavComponent() {
   const [navs] = useState([
@@ -46,6 +47,9 @@ export default function NavComponent() {
       })}
     </nav>
   ) : (
-    <nav className="h-[64px] bg-gray-400">简化版路由</nav>
+    <nav className="h-[64px] bg-gray-400">
+      简化版路由
+      <ThemeChanger />
+    </nav>
   );
 }
