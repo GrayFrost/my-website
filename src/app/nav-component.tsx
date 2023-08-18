@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, useParams, usePathname } from "next/navigation";
 import Link from "next/link";
-import { ThemeChanger } from './theme-changer';
+// import { ThemeChanger } from './theme-changer';
 
 export default function NavComponent() {
   const [navs] = useState([
@@ -33,7 +33,7 @@ export default function NavComponent() {
   const pathname = usePathname();
   console.log("zzh router信息", router, params, pathname);
   return pathname === "/" ? (
-    <nav className="flex items-center justify-end px-16 h-[64px] bg-[pink]">
+    <nav className="flex items-center justify-end px-16 h-[64px]">
       {navs.map((item, index) => {
         return (
           <Link
@@ -49,7 +49,7 @@ export default function NavComponent() {
   ) : (
     <nav className="h-[64px] bg-gray-400">
       简化版路由
-      <ThemeChanger />
+      {/* <ThemeChanger /> */}
     </nav>
   );
 }

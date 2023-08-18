@@ -18,13 +18,14 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
-        <Providers>
+        {/* <Providers> */}
           <NavComponent />
           <main>
             {children}
           </main>
-          <footer className="h-[80px] bg-slate-500 mt-auto">底部</footer>
-        </Providers>
+          {/* <footer className="h-[80px] bg-slate-500 mt-auto">底部</footer> */}
+          <footer className="h-[80px] mt-auto">底部</footer>
+        {/* </Providers> */}
       </body>
     </html>
   )
