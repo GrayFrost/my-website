@@ -39,3 +39,8 @@ lottie
 TODO
 
 判断哪些是client component，尽量移到组件数的尽头叶子节点端。
+
+
+@next-mdx-remote	将字符串转换成html标签
+@remark-slug	为html标签添加id（锚点跳转）
+@mapbox/rehype-prism	添加代码高亮

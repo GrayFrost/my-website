@@ -32,7 +32,27 @@ export default function NavComponent() {
   const params = useParams();
   const pathname = usePathname();
   console.log("zzh router信息", router, params, pathname);
-  return pathname === "/" ? (
+  // return pathname === "/" ? (
+  //   <nav className="flex items-center justify-end px-16 h-[64px]">
+  //     {navs.map((item, index) => {
+  //       return (
+  //         <Link
+  //           key={item.value}
+  //           href={item.value}
+  //           className={`${index !== navs.length - 1 ? "pr-16" : ""}`}
+  //         >
+  //           {item.name}
+  //         </Link>
+  //       );
+  //     })}
+  //   </nav>
+  // ) : (
+  //   <nav className="h-[64px] bg-gray-400">
+  //     简化版路由
+  //     {/* <ThemeChanger /> */}
+  //   </nav>
+  // );
+  return (
     <nav className="flex items-center justify-end px-16 h-[64px]">
       {navs.map((item, index) => {
         return (
@@ -45,11 +65,6 @@ export default function NavComponent() {
           </Link>
         );
       })}
-    </nav>
-  ) : (
-    <nav className="h-[64px] bg-gray-400">
-      简化版路由
-      {/* <ThemeChanger /> */}
     </nav>
   );
 }

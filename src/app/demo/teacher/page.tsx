@@ -4,6 +4,7 @@ import { useState } from "react";
 import Graph from "./graph";
 import ComprehensiveMd from "./comprehensive.mdx";
 import EducationMd from "./education.mdx";
+import ItMd from './it.mdx';
 
 export default function Teacher() {
   const [tab, setTab] = useState(1);
@@ -16,6 +17,10 @@ export default function Teacher() {
       id: 2,
       name: "教育",
     },
+    {
+      id: 3,
+      name: "信息技术"
+    }
   ]);
   return (
     <div>
@@ -41,6 +46,7 @@ export default function Teacher() {
       <article className="mx-auto prose prose-slate lg:prose-xl">
         {tab === 1 && <ComprehensiveMd />}
         {tab === 2 && <EducationMd />}
+        {tab === 3 && <ItMd />}
       </article>
       <section>
         <h2>知识图谱</h2>
