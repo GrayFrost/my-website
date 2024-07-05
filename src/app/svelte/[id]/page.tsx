@@ -1,11 +1,14 @@
 import { getAllPostIds, getPostData } from "../../../api/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-export default async function Page({ params: { id } }) {
+export default async function Page({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
   const postData = await getPostData(id);
   return (
     <div>
-      <h1>zzh todo</h1>
       <article className="prose lg:prose-xl">
         <MDXRemote source={postData.content}></MDXRemote>
       </article>
