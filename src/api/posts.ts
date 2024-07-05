@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+// import { serialize } from 'next-mdx-remote/serialize'
 
-const postsDirectory = path.join(process.cwd(), '../app/svelte');
+const postsDirectory = path.join(process.cwd(), '/src/app/svelte');
 
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
@@ -59,16 +60,18 @@ export function getSortedPostsData() {
   });
 }
 
-export function getPostData(id) {
+export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  // const mdxSource = await serialize(matterResult.content);
 
   // Combine the data with the id
   return {
     id,
-    ...matterResult.data,
+    // source: mdxSource,
+    ...matterResult,
   };
 }
