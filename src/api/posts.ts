@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 // import { serialize } from 'next-mdx-remote/serialize'
 
-const postsDirectory = path.join(process.cwd(), '/src/app/svelte');
+const postsDirectory = path.join(process.cwd(), '/src/posts/svelte');
 
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
