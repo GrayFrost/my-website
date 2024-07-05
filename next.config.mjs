@@ -1,4 +1,23 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
 
-export default nextConfig;
+/** @type {import('@next/mdx').NextMDXOptions} */
+const mdxConfig = {
+  extension: /\.mdx?$/,
+  options: {
+    // If you use remark-gfm, you'll need to use next.config.mjs
+    // as the package is ESM only
+    // https://github.com/remarkjs/remark-gfm#install
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+}
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+};
+
+export default withMDX(mdxConfig)(nextConfig);
