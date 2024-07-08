@@ -16,17 +16,19 @@ export default function Layout({
     <div className="relative">
       <div className="fixed">
         <Link href="/">
-          <Button isIconOnly>
+          <Button isIconOnly color="primary" variant="bordered">
             <HomeIcon className="size-6 " />
           </Button>
         </Link>
-        <Button isIconOnly>
-          <ChevronLeftIcon
-            className="size-6 cursor-pointer"
-            onClick={() => {
-              router.back();
-            }}
-          />
+        <Button
+          isIconOnly
+          color="primary"
+          variant="bordered"
+          onClick={() => {
+            router.back();
+          }}
+        >
+          <ChevronLeftIcon className="size-6" />
         </Button>
       </div>
       <div>{children}</div>
