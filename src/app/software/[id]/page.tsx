@@ -1,5 +1,5 @@
 import { getPost } from "../../../api/software-posts";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import Article from "../../../components/article";
 
 export default async function Page({
   params: { id },
@@ -9,9 +9,7 @@ export default async function Page({
   const postData = await getPost(id);
   return (
     <div className="flex justify-center">
-      <article className="prose lg:prose-lg">
-        <MDXRemote source={postData.content}></MDXRemote>
-      </article>
+      <Article source={postData.content} />
     </div>
   );
 }
