@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import langJavascript from "highlight.js/lib/languages/javascript";
 import langBash from "highlight.js/lib/languages/bash";
@@ -8,7 +9,7 @@ import "@/styles/highlight/a11y-dark.css";
 
 const options = {
   mdxOptions: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [
         rehypeHighlight,
