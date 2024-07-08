@@ -28,7 +28,7 @@ const options = {
 
 export default function Article({ source }: { source: string }) {
   return (
-    <article className="prose lg:prose-lg dark:prose-invert">
+    <article className="prose prose-slate lg:prose-lg dark:prose-invert">
       <MDXRemote
         source={source}
         // @ts-ignore
