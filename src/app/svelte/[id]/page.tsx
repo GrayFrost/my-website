@@ -1,4 +1,4 @@
-import { getPostData } from "../../../api/posts";
+import { getPost } from "../../../api/svelte-posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default async function Page({
@@ -6,7 +6,7 @@ export default async function Page({
 }: {
   params: { id: string };
 }) {
-  const postData = await getPostData(id);
+  const postData = await getPost(id);
   return (
     <div className="flex justify-center">
       <article className="prose">
