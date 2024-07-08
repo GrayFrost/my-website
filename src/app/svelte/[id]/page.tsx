@@ -9,7 +9,7 @@ export default async function Page({
   const postData = await getPostData(id);
   return (
     <div className="flex justify-center">
-      <article className="prose lg:prose-xl">
+      <article className="prose">
         <MDXRemote source={postData.content}></MDXRemote>
       </article>
     </div>

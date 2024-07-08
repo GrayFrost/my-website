@@ -5,7 +5,7 @@ export default async function Teacher() {
   const paths = await getAllPostIds();
   console.log("zzh paths", paths);
   return (
-    <div className="text-orange-500">
+    <div className="text-orange-500 w-2/3 mx-auto">
       Svelte从入门到精通
       <ul>
         {paths.map(({ params: { id } }) => {
