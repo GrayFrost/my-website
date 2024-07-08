@@ -1,5 +1,5 @@
-import { getPost } from "../../../api/svelte-posts";
-import Article from '../../../components/article';
+import { getPost } from "@/api/svelte-posts";
+import Article from '@/components/article';
 
 export default async function Page({
   params: { id },

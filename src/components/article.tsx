@@ -4,7 +4,7 @@ import langJavascript from "highlight.js/lib/languages/javascript";
 import langBash from "highlight.js/lib/languages/bash";
 import langHtml from "highlight.js/lib/languages/xml";
 import langDiff from "highlight.js/lib/languages/diff";
-import "../styles/highlight/a11y-dark.css";
+import "@/styles/highlight/a11y-dark.css";
 
 const options = {
   mdxOptions: {

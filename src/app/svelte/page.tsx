@@ -1,4 +1,4 @@
-import { getAllPostIds } from "../../api/svelte-posts";
+import { getAllPostIds } from "@/api/svelte-posts";
 import Link from "next/link";
 
 export default async function Teacher() {
