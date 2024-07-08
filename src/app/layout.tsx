@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import NextUIProvider from "@/providers/nextui";
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+// import "@/styles/override.css";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NextUIProvider>{children}</NextUIProvider>
+      </body>
     </html>
   );
 }

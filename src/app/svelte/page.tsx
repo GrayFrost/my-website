@@ -1,18 +1,21 @@
 import { getAllPostIds } from "@/api/svelte-posts";
 import Link from "next/link";
+import { Card, CardBody } from "@nextui-org/card";
 
 export default async function Teacher() {
   const paths = await getAllPostIds();
   return (
-    <div className="text-orange-500 w-2/3 mx-auto">
+    <div className="w-2/3 mx-auto">
       Svelte从入门到精通
       <ul>
         {paths.map(({ params: { id } }) => {
           // todo svelte 别写死
           return (
-            <li key={id}>
-              <Link href={`/svelte/${id}`}>{id}</Link>
-            </li>
+            <Link href={`/svelte/${id}`} key={id}>
+              <Card className="mb-4">
+                <CardBody>{id}</CardBody>
+              </Card>
+            </Link>
           );
         })}
       </ul>

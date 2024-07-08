@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { HomeIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { Button } from "@nextui-org/button";
 
 export default function Layout({
   children,
@@ -15,14 +16,18 @@ export default function Layout({
     <div className="relative">
       <div className="fixed">
         <Link href="/">
-          <HomeIcon className="size-6 text-blue-300" />
+          <Button isIconOnly>
+            <HomeIcon className="size-6 " />
+          </Button>
         </Link>
-        <ChevronLeftIcon
-          className="size-6 text-blue-300 cursor-pointer"
-          onClick={() => {
-            router.back();
-          }}
-        />
+        <Button isIconOnly>
+          <ChevronLeftIcon
+            className="size-6 cursor-pointer"
+            onClick={() => {
+              router.back();
+            }}
+          />
+        </Button>
       </div>
       <div>{children}</div>
     </div>
