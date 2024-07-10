@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NextUIProvider from "@/providers/nextui";
+import { ThemeProvider } from "@/components/theme-provider";
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 // import "@/styles/override.css";
@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white dark:bg-gray-900">
-        <NextUIProvider>{children}</NextUIProvider>
+        <ThemeProvider attribute="class" defaultTheme="system">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

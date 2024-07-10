@@ -1,6 +1,14 @@
 import { usePost } from "@/api/posts";
 import Link from "next/link";
-import { Card, CardBody } from "@nextui-org/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 
 export default async function Teacher() {
   const { getAllPostIds } = usePost('svelte');
@@ -14,7 +22,7 @@ export default async function Teacher() {
           return (
             <Link href={`/svelte/${id}`} key={id}>
               <Card className="mb-4">
-                <CardBody>{id}</CardBody>
+                <CardContent>{id}</CardContent>
               </Card>
             </Link>
           );
