@@ -7,18 +7,19 @@ import {
 
 
 export default async function Teacher() {
-  const { getAllPostIds } = usePost('svelte');
-  const paths = await getAllPostIds();
+  const { getAllPostIds, getAllPosts } = usePost('svelte');
+  const posts = await getAllPosts();;
+  
   return (
     <div className="w-2/3 mx-auto">
       Svelte从入门到精通
       <ul>
-        {paths.map(({ params: { id } }) => {
+        {posts.map(({id, data: {description}}) => {
           // todo svelte 别写死
           return (
             <Link href={`/svelte/${id}`} key={id}>
               <Card className="mb-4">
-                <CardContent>{id}</CardContent>
+                <CardContent>{description || ''}</CardContent>
               </Card>
             </Link>
           );

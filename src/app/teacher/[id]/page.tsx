@@ -7,10 +7,12 @@ export default async function Page({
   params: { id: string };
 }) {
   const { getPost } = usePost('teacher');
-  const postData = await getPost(id);
+  const {content, data} = await getPost(id);
+  const { description } = data;
   return (
     <div className="flex justify-center">
-      <Article source={postData.content} />
+      <div>{description || ''}</div>
+      <Article source={content} />
     </div>
   );
 }
