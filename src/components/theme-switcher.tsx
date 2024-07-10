@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Moon, SunMoon } from "lucide-react";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -15,15 +15,13 @@ export function ThemeSwitcher() {
 
   if (!mounted) return null;
 
+  const changeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
-    <div>
-      The current theme is: {theme}
-      <Button onClick={() => setTheme("light")} variant="outline" size="icon">
-        <SunIcon className="size-6" />
-      </Button>
-      <Button onClick={() => setTheme("dark")} variant="outline" size="icon">
-        <MoonIcon className="size-6" />
-      </Button>
-    </div>
+    <Button onClick={changeTheme} variant="outline" size="icon">
+      <SunMoon size={24} />
+    </Button>
   );
 }

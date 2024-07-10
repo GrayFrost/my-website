@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Operations } from '@/components/operations';
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 // import "@/styles/override.css";
@@ -18,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-white dark:bg-gray-900">
+      <body className="relative bg-white dark:bg-gray-900">
         <ThemeProvider attribute="class" defaultTheme="system">
+          <Operations />
           {children}
         </ThemeProvider>
       </body>
