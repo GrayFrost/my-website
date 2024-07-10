@@ -1,8 +1,9 @@
-import { getAllPostIds } from "@/api/svelte-posts";
+import { usePost } from "@/api/posts";
 import Link from "next/link";
 import { Card, CardBody } from "@nextui-org/card";
 
 export default async function Teacher() {
+  const { getAllPostIds } = usePost('svelte');
   const paths = await getAllPostIds();
   return (
     <div className="w-2/3 mx-auto">

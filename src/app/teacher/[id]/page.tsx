@@ -1,12 +1,12 @@
 import { usePost } from "@/api/posts";
-import Article from "@/components/article";
+import Article from '@/components/article';
 
 export default async function Page({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const { getPost } = usePost('software');
+  const { getPost } = usePost('teacher');
   const postData = await getPost(id);
   return (
     <div className="flex justify-center">

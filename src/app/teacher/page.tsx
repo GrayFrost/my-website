@@ -1,7 +1,25 @@
-export default function Teacher() {
+import { usePost } from "@/api/posts";
+import Link from "next/link";
+import { Card, CardBody } from "@nextui-org/card";
+
+export default async function Teacher() {
+  const { getAllPostIds } = usePost('teacher');
+  const paths = await getAllPostIds();
   return (
-    <div>
-      教资
+    <div className="w-2/3 mx-auto">
+      高中信息技术
+      <ul>
+        {paths.map(({ params: { id } }) => {
+          // todo teacher 别写死
+          return (
+            <Link href={`/teacher/${id}`} key={id}>
+              <Card className="mb-4">
+                <CardBody>{id}</CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      </ul>
     </div>
   );
 }
