@@ -69,4 +69,7 @@
     .article-title {
       view-transition-name: article-title;
     }
+    ::view-transition-old(article-title) {
+      display: none;
+    }
   }
