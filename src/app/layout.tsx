@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Operations } from '@/components/operations';
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import "react-vertical-timeline-component/style.min.css";
 // import "@/styles/override.css";
 
 // const inter = Inter({ subsets: ["latin"] });
