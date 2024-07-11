@@ -12,7 +12,7 @@ export default async function Teacher() {
   
   return (
     <div className="w-2/3 mx-auto">
-      Svelte从入门到精通
+      <h1 className="article-title">Svelte从入门到精通</h1>
       <ul>
         {posts.map(({id, data: {description}}) => {
           // todo svelte 别写死

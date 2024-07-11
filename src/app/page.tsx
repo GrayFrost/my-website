@@ -6,7 +6,7 @@ export default function Home() {
       主页
       <Link href="/teacher">教资</Link>
       <Link href="/software">软考</Link>
-      <Link href="/svelte">Svelte从入门到精通</Link>
+      <Link href="/svelte"><span className="article-title">Svelte从入门到精通</span></Link>
       <Link href="/travel">旅行</Link>
       <Link href="https://sveaflet.vercel.app/">Sveaflet</Link>
     </main>
