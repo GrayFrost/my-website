@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Operations } from '@/components/operations';
+import { Operations } from "@/components/operations";
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import "react-vertical-timeline-component/style.min.css";
+import { ViewTransitions } from "next-view-transitions";
 // import "@/styles/override.css";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -19,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="relative bg-white dark:bg-gray-900">
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <Operations />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className="relative bg-white dark:bg-gray-900">
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <Operations />
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
