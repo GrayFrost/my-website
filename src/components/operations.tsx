@@ -1,6 +1,7 @@
 "use client";
 
-import { Link } from 'next-view-transitions'
+import { useState, useEffect } from "react";
+import { Link } from "next-view-transitions";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Home, ChevronLeft, ArrowUp } from "lucide-react";
@@ -9,6 +10,39 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 export function Operations() {
   const router = useRouter();
   const pathname = usePathname();
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const isBrowser = () => typeof window !== "undefined";
+
+  const scrollToTop = () => {
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleScroll = () => {
+    // Show the button when the user scrolls down
+    var scrollTop =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+
+    if (scrollTop > window.innerHeight) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -36,7 +70,14 @@ export function Operations() {
         <ThemeSwitcher />
       </div>
       <div className="fixed bottom-4 right-4">
-        <Button size="icon" variant="outline">
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={scrollToTop}
+          className={`transition-opacity ease-in-out duration-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`} // TODO: transition
+        >
           <ArrowUp size={24} />
         </Button>
       </div>
