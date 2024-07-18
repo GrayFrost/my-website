@@ -36,10 +36,12 @@ export function Operations() {
 
   useEffect(() => {
     // Add scroll event listener when the component mounts
+    if (!isBrowser()) return;
     window.addEventListener("scroll", handleScroll);
 
     // Remove the event listener when the component unmounts
     return () => {
+      if (!isBrowser()) return;
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
