@@ -17,6 +17,22 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
+        <head>
+          <link
+            rel="preload"
+            as="font"
+            type="font/ttf"
+            href="/fonts/XiaolaiSC-Regular.ttf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/ttf"
+            href="/fonts/Kosefont-JP.ttf"
+            crossOrigin="anonymous"
+          />
+        </head>
         <body className="relative bg-white dark:bg-gray-900">
           <ThemeProvider attribute="class" defaultTheme="system">
             <Operations />

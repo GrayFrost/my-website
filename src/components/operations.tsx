@@ -6,7 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Home, ChevronLeft, ArrowUp } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { WiredButton } from 'wired-elements-react';
+import { WiredButton } from '@/components/wired-components';
 
 export function Operations() {
   const router = useRouter();

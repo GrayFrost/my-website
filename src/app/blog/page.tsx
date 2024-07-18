@@ -1,6 +1,6 @@
 import { usePost } from "@/api/posts";
 import { Link } from 'next-view-transitions'
-import { Card } from '@/components/card';
+import { WiredCard } from '@/components/wired-components';
 
 
 export default async function Teacher() {
@@ -15,9 +15,9 @@ export default async function Teacher() {
           // todo blog 别写死
           return (
             <Link href={`/blog/${id}`} key={id}>
-              <Card className="mb-4">
+              <WiredCard  className="mb-4">
                 {description || ''}
-              </Card>
+              </WiredCard >
             </Link>
           );
         })}

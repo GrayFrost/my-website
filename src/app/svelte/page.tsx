@@ -1,6 +1,6 @@
 import { usePost } from "@/api/posts";
 import { Link } from "next-view-transitions";
-import { Card } from "@/components/card";
+import { WiredCard } from '@/components/wired-components';
 
 export default async function Teacher() {
   const { getAllPostIds, getAllPosts } = usePost("svelte");
@@ -14,7 +14,7 @@ export default async function Teacher() {
           // todo svelte 别写死
           return (
             <Link href={`/svelte/${id}`} key={id}>
-              <Card className="mb-4">{description || ""}</Card>
+              <WiredCard className="mb-4">{description || ""}</WiredCard>
             </Link>
           );
         })}

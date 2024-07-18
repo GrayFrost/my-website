@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, SunMoon } from "lucide-react";
-import { WiredButton } from "wired-elements-react";
+import { WiredButton } from '@/components/wired-components';
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
