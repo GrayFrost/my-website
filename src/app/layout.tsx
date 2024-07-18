@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <head>
+        {/* <head>
           <link
             rel="preload"
             as="font"
@@ -32,7 +32,7 @@ export default function RootLayout({
             href="/fonts/Kosefont-JP.ttf"
             crossOrigin="anonymous"
           />
-        </head>
+        </head> */}
         <body className="relative bg-white dark:bg-gray-900">
           <ThemeProvider attribute="class" defaultTheme="system">
             <Operations />
