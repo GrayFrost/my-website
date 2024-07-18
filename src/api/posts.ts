@@ -37,7 +37,6 @@ export function usePost(dir: string) {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
-    console.log("zzh matterresult", matterResult);
     // const mdxSource = await serialize(matterResult.content);
 
     // Combine the data with the id

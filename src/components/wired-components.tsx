@@ -3,20 +3,15 @@
 import {
   WiredCard as WiredCardComponent,
   WiredButton as WiredButtonComponent,
-} from "wired-elements-react";
+} from "react-wired-elements";
+import type { WiredCardProps, WiredButtonProps } from "react-wired-elements";
 
-const WiredCard = (
-  props: typeof WiredCardComponent & { children: React.ReactNode }
-) => {
-  return <WiredCardComponent {...props}>{props.children}</WiredCardComponent>;
+const WiredButton = (props: WiredButtonProps) => {
+  return <WiredButtonComponent {...props} />;
 };
 
-const WiredButton = (
-  props: typeof WiredButtonComponent & { children: React.ReactNode }
-) => {
-  return (
-    <WiredButtonComponent {...props}>{props.children}</WiredButtonComponent>
-  );
+const WiredCard = (props: WiredCardProps) => {
+  return <WiredCardComponent {...props} />;
 };
 
 export { WiredCard, WiredButton };

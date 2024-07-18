@@ -15,7 +15,7 @@ export default async function Teacher() {
           // todo blog 别写死
           return (
             <Link href={`/blog/${id}`} key={id}>
-              <WiredCard  className="mb-4">
+              <WiredCard  className="mb-4" elevation={3}>
                 {description || ''}
               </WiredCard >
             </Link>

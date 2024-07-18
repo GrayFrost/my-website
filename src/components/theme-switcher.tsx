@@ -2,9 +2,8 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Moon, SunMoon } from "lucide-react";
-import { WiredButton } from '@/components/wired-components';
+import { SunMoon } from "lucide-react";
+import { WiredButton } from "@/components/wired-components";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -21,7 +20,7 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <WiredButton onClick={changeTheme} variant="outline" size="icon">
+    <WiredButton onClick={changeTheme}>
       <SunMoon size={24} />
     </WiredButton>
   );

@@ -1,6 +1,6 @@
 import { usePost } from "@/api/posts";
 import { Link } from "next-view-transitions";
-import { WiredCard } from '@/components/wired-components';
+import { WiredCard } from "@/components/wired-components";
 
 export default async function Teacher() {
   const { getAllPostIds } = usePost("teacher");
@@ -13,7 +13,9 @@ export default async function Teacher() {
           // todo teacher 别写死
           return (
             <Link href={`/teacher/${id}`} key={id}>
-              <WiredCard className="mb-4">{id}</WiredCard>
+              <WiredCard className="mb-4" elevation={3}>
+                {id}
+              </WiredCard>
             </Link>
           );
         })}
