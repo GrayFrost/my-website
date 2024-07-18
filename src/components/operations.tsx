@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Home, ChevronLeft, ArrowUp } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { WiredButton } from 'wired-elements-react';
 
 export function Operations() {
   const router = useRouter();
@@ -50,19 +51,17 @@ export function Operations() {
         {pathname !== "/" && (
           <>
             <Link href="/">
-              <Button size="icon" variant="outline">
+              <WiredButton>
                 <Home size={24} />
-              </Button>
+              </WiredButton>
             </Link>
-            <Button
-              size="icon"
-              variant="outline"
+            <WiredButton
               onClick={() => {
                 router.back();
               }}
             >
               <ChevronLeft size={24} />
-            </Button>
+            </WiredButton>
           </>
         )}
       </div>
@@ -70,16 +69,14 @@ export function Operations() {
         <ThemeSwitcher />
       </div>
       <div className="fixed bottom-4 right-4">
-        <Button
-          size="icon"
-          variant="outline"
+        <WiredButton
           onClick={scrollToTop}
           className={`transition-opacity ease-in-out duration-500 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`} // TODO: transition
         >
           <ArrowUp size={24} />
-        </Button>
+        </WiredButton>
       </div>
       <div className="fixed bottom-4 left-4"></div>
     </>

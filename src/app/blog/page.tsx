@@ -1,9 +1,6 @@
 import { usePost } from "@/api/posts";
 import { Link } from 'next-view-transitions'
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
+import { Card } from '@/components/card';
 
 
 export default async function Teacher() {
@@ -19,7 +16,7 @@ export default async function Teacher() {
           return (
             <Link href={`/blog/${id}`} key={id}>
               <Card className="mb-4">
-                <CardContent>{description || ''}</CardContent>
+                {description || ''}
               </Card>
             </Link>
           );
