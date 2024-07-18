@@ -7,3 +7,18 @@ description: 记录问题
 
 ## 自定义字体
 https://github.com/vercel/next.js/discussions/16257
+
+## SSR
+window is not defined
+
+```javascript
+const WiredButtonComponent = dynamic(
+  () =>
+    import("react-wired-elements").then((res) => {
+      return res.WiredButton;
+    }),
+  {
+    ssr: false,
+  }
+);
+```

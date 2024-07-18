@@ -1,7 +1,8 @@
 "use client";
 
-import { Chrono } from "react-chrono";
+// import { Chrono } from "react-chrono";
 import SafeHydrate from "@/components/safe-hydrate";
+import dynamic from "next/dynamic";
 
 const items = [
   {
@@ -24,12 +25,18 @@ const items = [
   },
 ];
 
+const Chrono = dynamic(
+  () =>
+    import("react-chrono").then((res) => {
+      return res.Chrono;
+    }),
+  {
+    ssr: false,
+  }
+);
+
 const VerticalTimeline = () => {
-  return (
-    <SafeHydrate>
-      <Chrono items={items} mode="VERTICAL_ALTERNATING" disableToolbar />
-    </SafeHydrate>
-  );
+  return <Chrono items={items} mode="VERTICAL_ALTERNATING" disableToolbar />;
 };
 
 export default function Travel() {
