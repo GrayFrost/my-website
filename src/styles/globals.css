@@ -4,10 +4,10 @@
 
 @font-face {
   font-family: "Kose";
-  src: url("/fonts/XiaolaiMonoSC-Regular.ttf");
+  /* src: url("/fonts/XiaolaiMonoSC-Regular.ttf"); */
   src: url("/fonts/XiaolaiSC-Regular.ttf");
-  src: url("/fonts/KosefontP-JP.ttf");
-  src: url("/fonts/Kosefont-JP.ttf");
+  /* src: url("/fonts/KosefontP-JP.ttf");
+  src: url("/fonts/Kosefont-JP.ttf"); */
 }
 
 @layer base {
@@ -74,6 +74,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Kose';
+    font-display: swap;
   }
   body {
     @apply bg-background text-foreground;
