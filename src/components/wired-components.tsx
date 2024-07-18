@@ -5,7 +5,7 @@
 //   WiredButton as WiredButtonComponent,
 // } from "react-wired-elements";
 import dynamic from "next/dynamic";
-import type { WiredCardProps, WiredButtonProps } from "react-wired-elements";
+import type { WiredCardProps, WiredButtonProps, WiredImageProps } from "react-wired-elements";
 import SafeHydrate from "@/components/safe-hydrate";
 
 const WiredButtonComponent = dynamic(
@@ -28,6 +28,16 @@ const WiredCardComponent = dynamic(
   }
 );
 
+const WiredImageComponent = dynamic(
+  () =>
+    import("react-wired-elements").then((res) => {
+      return res.WiredImage;
+    }),
+  {
+    ssr: false,
+  }
+);
+
 const WiredButton = (props: WiredButtonProps) => {
   return <WiredButtonComponent {...props} />;
 };
@@ -36,4 +46,8 @@ const WiredCard = (props: WiredCardProps) => {
   return <WiredCardComponent {...props} />;
 };
 
-export { WiredCard, WiredButton };
+const WiredImage = (props: WiredCardProps) => {
+  return <WiredImageComponent {...props} />;
+};
+
+export { WiredCard, WiredButton, WiredImage };
