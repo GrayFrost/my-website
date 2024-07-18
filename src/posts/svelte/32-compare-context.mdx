@@ -91,7 +91,9 @@ const GrandSon = () => {
 
 export default GrandSon;
 ```
-![](/images/svelte/32-1.gif)  
+
+![](/images/svelte/32-1.gif)
+
 可以看到，通过context传递的变量在跨组件内接收后，能够正常使用，而且传递到组件内的父组件的方法，也能够正常被执行。需要注意的一点时，context并非是万能的银弹，使用context时需要注意传递的值会不会影响到页面的刷新，这对于有性能要求的页面来说非常重要。
 
 ### class component

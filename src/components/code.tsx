@@ -13,9 +13,11 @@ const RoughNotation = dynamic(
 );
 
 export const Code = ({ children }: { children: React.ReactElement }) => {
-  console.log("zzh code children", children);
+  
   return (
-    <RoughNotation type="underline" show={true}>
+    <RoughNotation type="underline" show={true} getAnnotationObject={(obj) => {
+      // console.log('zzh obj', obj);
+    }} animate={false}>
       <span className="whitespace-nowrap">{children}</span>
     </RoughNotation>
   );
