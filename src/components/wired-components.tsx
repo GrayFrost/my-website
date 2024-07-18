@@ -5,7 +5,7 @@ import {
   WiredButton as WiredButtonComponent,
 } from "react-wired-elements";
 import type { WiredCardProps, WiredButtonProps } from "react-wired-elements";
-import { SafeHydrate } from "@/components/safe-hydrate";
+import SafeHydrate from "@/components/safe-hydrate";
 
 const WiredButton = (props: WiredButtonProps) => {
   return (

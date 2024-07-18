@@ -1,7 +1,7 @@
 "use client";
 
 import { Chrono } from "react-chrono";
-import { SafeHydrate } from "@/components/safe-hydrate";
+import SafeHydrate from "@/components/safe-hydrate";
 
 const items = [
   {
