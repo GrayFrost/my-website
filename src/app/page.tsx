@@ -9,6 +9,7 @@ export default function Home() {
       <Link href="/svelte"><span className="article-title">Svelte从入门到精通</span></Link>
       <Link href="/travel">旅行</Link>
       <Link href="https://sveaflet.vercel.app/">Sveaflet</Link>
+      <Link href="/blog">文章</Link>
     </main>
   );
 }
