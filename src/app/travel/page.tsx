@@ -1,6 +1,7 @@
 "use client";
 
-import { Chrono } from 'react-chrono';
+import { Chrono } from "react-chrono";
+import { SafeHydrate } from "@/components/safe-hydrate";
 
 const items = [
   {
@@ -20,16 +21,14 @@ const items = [
     cardTitle: "Event 3",
     cardSubtitle: "Event 3 Subtitle",
     cardDetailedText: "This is the third event on the timeline.",
-  }
+  },
 ];
 
 const VerticalTimeline = () => {
   return (
-    <Chrono
-      items={items}
-      mode="VERTICAL_ALTERNATING"
-      disableToolbar
-    />
+    <SafeHydrate>
+      <Chrono items={items} mode="VERTICAL_ALTERNATING" disableToolbar />
+    </SafeHydrate>
   );
 };
 

@@ -5,14 +5,7 @@ import {
   WiredButton as WiredButtonComponent,
 } from "react-wired-elements";
 import type { WiredCardProps, WiredButtonProps } from "react-wired-elements";
-
-function SafeHydrate({ children }: { children: React.ReactNode }) {
-  return (
-    <div suppressHydrationWarning>
-      {typeof window === "undefined" ? null : children}
-    </div>
-  );
-}
+import { SafeHydrate } from "@/components/safe-hydrate";
 
 const WiredButton = (props: WiredButtonProps) => {
   return (
