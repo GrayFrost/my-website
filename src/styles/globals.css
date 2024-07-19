@@ -74,7 +74,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Kose';
-    font-display: swap;
+    font-display: fallback;
   }
   body {
     @apply bg-background text-foreground;
