@@ -73,8 +73,8 @@
   }
   html {
     scroll-behavior: smooth;
-    /* font-family: 'Kose';
-    font-display: swap; */
+    font-family: 'Kose';
+    font-display: swap;
   }
   body {
     @apply bg-background text-foreground;
