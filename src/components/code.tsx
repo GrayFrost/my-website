@@ -14,7 +14,7 @@ const RoughNotation = dynamic(
 
 const CodeComponent = ({ children }: { children: React.ReactElement }) => {
   return (
-    <RoughNotation type="underline" show={true} animate={true}>
+    <RoughNotation type="underline" show={true} animate={true} animationDelay={1500}>
       <span className="whitespace-nowrap">{children}</span>
     </RoughNotation>
   );
