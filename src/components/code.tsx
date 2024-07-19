@@ -1,8 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState, useEffect } from 'react';
-import type { Annotation } from "react-rough-notation/dist/RoughNotation/types";
 
 const RoughNotation = dynamic(
   () =>
@@ -14,37 +12,14 @@ const RoughNotation = dynamic(
   }
 );
 
-let loaded = false;
-
-if (typeof window !== 'undefined') {
-  window.onload = () => {
-    loaded = true;
-    console.log('zzh window onload');
-  }
-}
-
-export const Code = ({ children }: { children: React.ReactElement }) => {
-  const [notationObj, setNotationObj] = useState<Annotation>();
-  const [loaded2, setLoaded] = useState(false)
-
-  if ((loaded ||loaded2) && notationObj) {
-    notationObj.show();
-  }
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.onload = () => {
-        setLoaded(true);
-        console.log('zzh window inner onload');
-      }
-    }
-  }, [])
-  
+const CodeComponent = ({ children }: { children: React.ReactElement }) => {
   return (
-    <RoughNotation type="underline" show={false} getAnnotationObject={(obj) => {
-      setNotationObj(obj);
-    }} animate={true}>
+    <RoughNotation type="underline" show={true} animate={true}>
       <span className="whitespace-nowrap">{children}</span>
     </RoughNotation>
   );
 };
+
+export const Code = dynamic(() => Promise.resolve(CodeComponent), {
+  ssr: false,
+});
