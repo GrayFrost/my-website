@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Annotation } from "react-rough-notation/dist/RoughNotation/types";
 
 const RoughNotation = dynamic(
@@ -25,10 +25,20 @@ if (typeof window !== 'undefined') {
 
 export const Code = ({ children }: { children: React.ReactElement }) => {
   const [notationObj, setNotationObj] = useState<Annotation>();
+  const [loaded2, setLoaded] = useState(false)
 
-  if (loaded && notationObj) {
+  if ((loaded ||loaded2) && notationObj) {
     notationObj.show();
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.onload = () => {
+        setLoaded(true);
+        console.log('zzh window inner onload');
+      }
+    }
+  }, [])
   
   return (
     <RoughNotation type="underline" show={false} getAnnotationObject={(obj) => {
