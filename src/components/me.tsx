@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 export const MeIcon = () => {
 
   const { theme, setTheme } = useTheme();
-  console.log('zzh theme', theme);
+
   const foreColor = !theme || theme === 'light' ? '#000000' : '#ffffff';
   const bgColor = !theme || theme === 'light' ? '#ffffff' : '#000000';
   
