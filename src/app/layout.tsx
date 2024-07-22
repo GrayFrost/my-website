@@ -34,7 +34,7 @@ export default function RootLayout({
           /> */}
         </head>
         <body className="relative bg-white dark:bg-gray-900">
-          <ThemeProvider attribute="class" defaultTheme="system">
+          <ThemeProvider attribute="class" defaultTheme="light">
             <Operations />
             {children}
           </ThemeProvider>
