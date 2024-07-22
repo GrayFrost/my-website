@@ -15,11 +15,17 @@ export const SyntaxHighlighter = ({
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              {/* <span>{i + 1}</span> */}
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
-              ))}
+            <div key={i} className="flex">
+              {i !== tokens.length - 1 && ( // 最后一行空行，不展示
+                <>
+                  <span className="w-8 shrink-0 bg-slate-300">{i + 1}</span>
+                  <div {...getLineProps({ line })}>
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token })} />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </pre>
