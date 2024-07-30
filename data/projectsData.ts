@@ -7,12 +7,10 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Sveaflet',
+    description: `Sveaflet provides Svelte components for Leaflet mapping components to allow simple construction of declarative maps.`,
+    imgSrc: '/static/images/sveaflet.png',
+    href: 'https://sveaflet.vercel.app/',
   },
   {
     title: 'The Time Machine',
