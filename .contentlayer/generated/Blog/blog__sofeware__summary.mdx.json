@@ -1,0 +1,40 @@
+{
+  "title": "软件设计师总结",
+  "date": "2024-07-30T00:00:00.000Z",
+  "tags": [
+    "软考"
+  ],
+  "draft": false,
+  "body": {
+    "raw": "\n前期备考\n\n备考思路：软件设计师教程第五版 + 十二个txt。无脑记笔记\n软件设计师一共十二个章节，我建立了十二个txt文件。每一章都是分开记笔记。这也有助于后面快速查找考点。会有人问，这样盲目记笔记会不会浪费时间？\n不会，为什么不会?继续看\n这一部分，不需要背笔记，只需要看着教程，把自己认为重要的知识点无脑记下来就行，主要是过一遍教程，针对大的知识点有一个脸熟就行。\n\n过来人技巧：\n第八章算法设计与分析，要记的东西很少，因为它是算法题目，只是了解有几种算法题型就行了，放到后面再看。\n\n第十一章标准化和软件知识产权基础知识，这一章完全可以不看，里面全是什么法律条文。而且这一章考试只考一道题，即使你不看教程这一题也能做出来。所以，这一章可以不看。\n\n第十二章软件系统分析与设计，这一章也可以不看，因为这一章主要概述可下午的几种题型，记笔记没啥用。\n\n其他的几章按部就班的过一遍，记下笔记。这样时间就节省了很多了。\n\n\n\n\n- 计算机系统知识\n- 程序语言基础知识\n- 操作系统知识\n- 系统开发和运行\n- 网络基础知识\n- 多媒体知识\n- 数据库技术\n- 数据结构\n- 算法设计与分析\n- 面向对象技术\n- 软件知识产权\n- 计算机英文\n",
+    "code": "var Component=(()=>{var p=Object.create;var t=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var _=(l,n)=>()=>(n||l((n={exports:{}}).exports,n),n.exports),j=(l,n)=>{for(var i in n)t(l,i,{get:n[i],enumerable:!0})},d=(l,n,i,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of u(n))!f.call(l,r)&&r!==i&&t(l,r,{get:()=>n[r],enumerable:!(c=x(n,r))||c.enumerable});return l};var g=(l,n,i)=>(i=l!=null?p(m(l)):{},d(n||!l||!l.__esModule?t(i,\"default\",{value:l,enumerable:!0}):i,l)),M=l=>d(t({},\"__esModule\",{value:!0}),l);var o=_((X,h)=>{h.exports=_jsx_runtime});var D={};j(D,{default:()=>a,frontmatter:()=>C});var e=g(o()),C={title:\"\\u8F6F\\u4EF6\\u8BBE\\u8BA1\\u5E08\\u603B\\u7ED3\",date:\"2024-07-30\",tags:[\"\\u8F6F\\u8003\"],draft:!1};function s(l){let n={li:\"li\",p:\"p\",ul:\"ul\",...l.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"\\u524D\\u671F\\u5907\\u8003\"}),(0,e.jsx)(n.p,{children:\"\\u5907\\u8003\\u601D\\u8DEF\\uFF1A\\u8F6F\\u4EF6\\u8BBE\\u8BA1\\u5E08\\u6559\\u7A0B\\u7B2C\\u4E94\\u7248 + \\u5341\\u4E8C\\u4E2Atxt\\u3002\\u65E0\\u8111\\u8BB0\\u7B14\\u8BB0 \\u8F6F\\u4EF6\\u8BBE\\u8BA1\\u5E08\\u4E00\\u5171\\u5341\\u4E8C\\u4E2A\\u7AE0\\u8282\\uFF0C\\u6211\\u5EFA\\u7ACB\\u4E86\\u5341\\u4E8C\\u4E2Atxt\\u6587\\u4EF6\\u3002\\u6BCF\\u4E00\\u7AE0\\u90FD\\u662F\\u5206\\u5F00\\u8BB0\\u7B14\\u8BB0\\u3002\\u8FD9\\u4E5F\\u6709\\u52A9\\u4E8E\\u540E\\u9762\\u5FEB\\u901F\\u67E5\\u627E\\u8003\\u70B9\\u3002\\u4F1A\\u6709\\u4EBA\\u95EE\\uFF0C\\u8FD9\\u6837\\u76F2\\u76EE\\u8BB0\\u7B14\\u8BB0\\u4F1A\\u4E0D\\u4F1A\\u6D6A\\u8D39\\u65F6\\u95F4\\uFF1F \\u4E0D\\u4F1A\\uFF0C\\u4E3A\\u4EC0\\u4E48\\u4E0D\\u4F1A?\\u7EE7\\u7EED\\u770B \\u8FD9\\u4E00\\u90E8\\u5206\\uFF0C\\u4E0D\\u9700\\u8981\\u80CC\\u7B14\\u8BB0\\uFF0C\\u53EA\\u9700\\u8981\\u770B\\u7740\\u6559\\u7A0B\\uFF0C\\u628A\\u81EA\\u5DF1\\u8BA4\\u4E3A\\u91CD\\u8981\\u7684\\u77E5\\u8BC6\\u70B9\\u65E0\\u8111\\u8BB0\\u4E0B\\u6765\\u5C31\\u884C\\uFF0C\\u4E3B\\u8981\\u662F\\u8FC7\\u4E00\\u904D\\u6559\\u7A0B\\uFF0C\\u9488\\u5BF9\\u5927\\u7684\\u77E5\\u8BC6\\u70B9\\u6709\\u4E00\\u4E2A\\u8138\\u719F\\u5C31\\u884C\\u3002\"}),(0,e.jsx)(n.p,{children:\"\\u8FC7\\u6765\\u4EBA\\u6280\\u5DE7\\uFF1A \\u7B2C\\u516B\\u7AE0\\u7B97\\u6CD5\\u8BBE\\u8BA1\\u4E0E\\u5206\\u6790\\uFF0C\\u8981\\u8BB0\\u7684\\u4E1C\\u897F\\u5F88\\u5C11\\uFF0C\\u56E0\\u4E3A\\u5B83\\u662F\\u7B97\\u6CD5\\u9898\\u76EE\\uFF0C\\u53EA\\u662F\\u4E86\\u89E3\\u6709\\u51E0\\u79CD\\u7B97\\u6CD5\\u9898\\u578B\\u5C31\\u884C\\u4E86\\uFF0C\\u653E\\u5230\\u540E\\u9762\\u518D\\u770B\\u3002\"}),(0,e.jsx)(n.p,{children:\"\\u7B2C\\u5341\\u4E00\\u7AE0\\u6807\\u51C6\\u5316\\u548C\\u8F6F\\u4EF6\\u77E5\\u8BC6\\u4EA7\\u6743\\u57FA\\u7840\\u77E5\\u8BC6\\uFF0C\\u8FD9\\u4E00\\u7AE0\\u5B8C\\u5168\\u53EF\\u4EE5\\u4E0D\\u770B\\uFF0C\\u91CC\\u9762\\u5168\\u662F\\u4EC0\\u4E48\\u6CD5\\u5F8B\\u6761\\u6587\\u3002\\u800C\\u4E14\\u8FD9\\u4E00\\u7AE0\\u8003\\u8BD5\\u53EA\\u8003\\u4E00\\u9053\\u9898\\uFF0C\\u5373\\u4F7F\\u4F60\\u4E0D\\u770B\\u6559\\u7A0B\\u8FD9\\u4E00\\u9898\\u4E5F\\u80FD\\u505A\\u51FA\\u6765\\u3002\\u6240\\u4EE5\\uFF0C\\u8FD9\\u4E00\\u7AE0\\u53EF\\u4EE5\\u4E0D\\u770B\\u3002\"}),(0,e.jsx)(n.p,{children:\"\\u7B2C\\u5341\\u4E8C\\u7AE0\\u8F6F\\u4EF6\\u7CFB\\u7EDF\\u5206\\u6790\\u4E0E\\u8BBE\\u8BA1\\uFF0C\\u8FD9\\u4E00\\u7AE0\\u4E5F\\u53EF\\u4EE5\\u4E0D\\u770B\\uFF0C\\u56E0\\u4E3A\\u8FD9\\u4E00\\u7AE0\\u4E3B\\u8981\\u6982\\u8FF0\\u53EF\\u4E0B\\u5348\\u7684\\u51E0\\u79CD\\u9898\\u578B\\uFF0C\\u8BB0\\u7B14\\u8BB0\\u6CA1\\u5565\\u7528\\u3002\"}),(0,e.jsx)(n.p,{children:\"\\u5176\\u4ED6\\u7684\\u51E0\\u7AE0\\u6309\\u90E8\\u5C31\\u73ED\\u7684\\u8FC7\\u4E00\\u904D\\uFF0C\\u8BB0\\u4E0B\\u7B14\\u8BB0\\u3002\\u8FD9\\u6837\\u65F6\\u95F4\\u5C31\\u8282\\u7701\\u4E86\\u5F88\\u591A\\u4E86\\u3002\"}),(0,e.jsxs)(n.ul,{children:[(0,e.jsx)(n.li,{children:\"\\u8BA1\\u7B97\\u673A\\u7CFB\\u7EDF\\u77E5\\u8BC6\"}),(0,e.jsx)(n.li,{children:\"\\u7A0B\\u5E8F\\u8BED\\u8A00\\u57FA\\u7840\\u77E5\\u8BC6\"}),(0,e.jsx)(n.li,{children:\"\\u64CD\\u4F5C\\u7CFB\\u7EDF\\u77E5\\u8BC6\"}),(0,e.jsx)(n.li,{children:\"\\u7CFB\\u7EDF\\u5F00\\u53D1\\u548C\\u8FD0\\u884C\"}),(0,e.jsx)(n.li,{children:\"\\u7F51\\u7EDC\\u57FA\\u7840\\u77E5\\u8BC6\"}),(0,e.jsx)(n.li,{children:\"\\u591A\\u5A92\\u4F53\\u77E5\\u8BC6\"}),(0,e.jsx)(n.li,{children:\"\\u6570\\u636E\\u5E93\\u6280\\u672F\"}),(0,e.jsx)(n.li,{children:\"\\u6570\\u636E\\u7ED3\\u6784\"}),(0,e.jsx)(n.li,{children:\"\\u7B97\\u6CD5\\u8BBE\\u8BA1\\u4E0E\\u5206\\u6790\"}),(0,e.jsx)(n.li,{children:\"\\u9762\\u5411\\u5BF9\\u8C61\\u6280\\u672F\"}),(0,e.jsx)(n.li,{children:\"\\u8F6F\\u4EF6\\u77E5\\u8BC6\\u4EA7\\u6743\"}),(0,e.jsx)(n.li,{children:\"\\u8BA1\\u7B97\\u673A\\u82F1\\u6587\"})]})]})}function a(l={}){let{wrapper:n}=l.components||{};return n?(0,e.jsx)(n,{...l,children:(0,e.jsx)(s,{...l})}):s(l)}return M(D);})();\n;return Component;"
+  },
+  "_id": "blog/sofeware/summary.mdx",
+  "_raw": {
+    "sourceFilePath": "blog/sofeware/summary.mdx",
+    "sourceFileName": "summary.mdx",
+    "sourceFileDir": "blog/sofeware",
+    "contentType": "mdx",
+    "flattenedPath": "blog/sofeware/summary"
+  },
+  "type": "Blog",
+  "readingTime": {
+    "text": "3 min read",
+    "minutes": 2.12,
+    "time": 127200,
+    "words": 424
+  },
+  "slug": "sofeware/summary",
+  "path": "blog/sofeware/summary",
+  "filePath": "blog/sofeware/summary.mdx",
+  "toc": [],
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "软件设计师总结",
+    "datePublished": "2024-07-30T00:00:00.000Z",
+    "dateModified": "2024-07-30T00:00:00.000Z",
+    "image": "/static/images/twitter-card.png",
+    "url": "https://tailwind-nextjs-starter-blog.vercel.app/blog/sofeware/summary"
+  }
+}
