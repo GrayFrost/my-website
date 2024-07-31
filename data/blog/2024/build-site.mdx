@@ -1,13 +1,19 @@
+
+# 建站时的一些问题
+
+- mdxremote component
+- transition
+- 字体
+- ssr下window document
+
+## mdx中标签组件的替换
+
+```javascript
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkToc from "remark-toc";
 import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import langJavascript from "highlight.js/lib/languages/javascript";
-import langBash from "highlight.js/lib/languages/bash";
-import langHtml from "highlight.js/lib/languages/xml";
-import langDiff from "highlight.js/lib/languages/diff";
 import "@/styles/highlight/a11y-dark.css";
 import { SyntaxHighlighter } from '@/components/highlight';
 import { Code } from '@/components/code';
@@ -18,17 +24,6 @@ const options = {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [
       rehypeSlug,
-      // [
-      //   rehypeHighlight,
-      //   {
-      //     languages: {
-      //       bash: langBash,
-      //       javascript: langJavascript,
-      //       html: langHtml,
-      //       diff: langDiff,
-      //     },
-      //   },
-      // ],
       [
         rehypeAutolinkHeadings,
         {
@@ -62,3 +57,38 @@ export default function Article({ source }: { source: string }) {
     </article>
   );
 }
+```
+
+高亮组件可以使用`prism-react-renderer`
+
+## transition
+
+## 自定义中文字体的体积问题
+fontmin
+
+## window not defined
+
+在`use client;`下编写代码
+
+判断`window`等变量是否存在
+```javascript
+const NoSSR = ({ children }: { children: React.ReactNode }) => (
+  <div suppressHydrationWarning>
+    {typeof window === "undefined" ? null : children}
+  </div>
+);
+```
+
+```javascript
+import dynamic from "next/dynamic";
+
+const WiredButtonComponent = dynamic(
+  () =>
+    import("react-wired-elements").then((res) => {
+      return res.WiredButton;
+    }),
+  {
+    ssr: false,
+  }
+);
+```
