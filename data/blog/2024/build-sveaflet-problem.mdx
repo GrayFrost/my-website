@@ -22,32 +22,105 @@ draft: false
 
 ### 组件
 
-- 其一，关于文件名的命名逻辑，一开始我也是直接Circle.svelte、CirleMarker.svelte诸如此类，然而到了打包阶段，打包后的d.ts里的文件名变量会和Leaflet本身的类名冲突，比如Circle.svelte和`import { Circle } from 'leaflet'`中的Circle冲突，于是在每个组件前都加了个S，即代表Svelte版的组件，依次来规避冲突。
+#### 文件名
 
-- 其二，关于组件之间的分层逻辑组织。经过阅读其他组件库的源码和在编程过程中的反复实践，最终得出，leaflet之间的不同类存在着一种层级结构，大概如下：
+关于文件名的命名逻辑，一开始我也是直接Circle.svelte、CirleMarker.svelte诸如此类，然而到了打包阶段，打包后的d.ts里的文件名变量会和Leaflet本身的类名冲突，比如Circle.svelte和`import { Circle } from 'leaflet'`中的Circle冲突，于是在每个组件前都加了个S，即代表Svelte版的组件，依次来规避冲突。
 
-  - 最顶层是Map层，其他的类要展示都得依托于这个顶层的类；
-  - 其次是Layer层，这个层用来管理一些瓦片Layer，比如管理TileLayer和TileLayerWMS，目前只有LayerGroup属于这一层
-  - 然后是一种特殊的ControlLayer层，用来控制Control相关组件，目前只有ControlLayers属于这一层
-  - 最后是Overlay层，大部分的组件都属于这一层，比如：Circle、CirMarker、GeoJSON、Marker、Polygon、Polyline、Rectangle、ImageOverlay、SVGOverlay、VideoOverlay。
-  - 剩余的则依附于Overlay，比如Icon、Popup、Tooltip等。
+#### 组件的分层
 
-- 其三，关于组件之间的props更新。最开始是每个组件都有自己的关于props更新处理的逻辑，然而写着写着，除了变量名不同，大部分逻辑甚至可以从另一个组件复制粘贴，于是我从所有组件更新的逻辑中抽象了公共的处理方式，最后实现了一个叫Compare的类，用来关于所有组件的prop更新。
+关于组件之间的分层逻辑组织。经过阅读其他组件库的源码和在编程过程中的反复实践，最终得出，leaflet之间的不同类存在着一种层级结构，大概如下：
 
-- 其四，关于组件内部的逻辑。前面的几个关键点都是为了处理组件逻辑而铺垫。大多数组件的逻辑大同小异：首先是对外暴露props，然后拿到上面我们所说的分层，之后是在onMount中生成组件实例，同时加入对props更新的监听，最后则是判断组件的层级，然后一层层的addLayer。
+- 最顶层是Map层，其他的类要展示都得依托于这个顶层的类；
+- 其次是Layer层，这个层用来管理一些瓦片Layer，比如管理TileLayer和TileLayerWMS，目前只有LayerGroup属于这一层
+- 然后是一种特殊的ControlLayer层，用来控制Control相关组件，目前只有ControlLayers属于这一层
+- 最后是Overlay层，大部分的组件都属于这一层，比如：Circle、CirMarker、GeoJSON、Marker、Polygon、Polyline、Rectangle、ImageOverlay、SVGOverlay、VideoOverlay。
+- 剩余的则依附于Overlay，比如Icon、Popup、Tooltip等。
+
+#### props更新
+
+关于组件之间的props更新。最开始是每个组件都有自己的关于props更新处理的逻辑，然而写着写着，除了变量名不同，大部分逻辑甚至可以从另一个组件复制粘贴，于是我从所有组件更新的逻辑中抽象了公共的处理方式，最后实现了一个叫Compare的类，用来关于所有组件的prop更新。
+
+#### 组件内的逻辑
+
+关于组件内部的逻辑。前面的几个关键点都是为了处理组件逻辑而铺垫。大多数组件的逻辑大同小异：首先是对外暴露props，然后拿到上面我们所说的分层，之后是在onMount中生成组件实例，同时加入对props更新的监听，最后则是判断组件的层级，然后一层层的addLayer。
 
 ### 网站
 
 说实话，对于Sveaflet组件库网站的搭建，比实现组件本身耗费了更多精力。
 
-- 其一，最开始遇到的问题，也是大部分开发都会遇到的问题。`window is not defined`。目前我的解决方式是直接在`+page.ts`中添加`export const ssr = false;`这一行代码。
+#### window is not defined
 
-- 其二，markdown转页面的处理，sveltekit中的接口请求定义
+最开始遇到的问题，也是大部分开发都会遇到的问题。`window is not defined`。目前我的解决方式是直接在`+page.ts`中添加`export const ssr = false;`这一行代码。
 
-- 其三，关于markdown example的展示，组件的替换。mdx, mdsvexamples
+#### 项目的目录结构
+Sveltekit中代码的组织方式
 
-- 其四，Sveltekit中代码的组织方式
+#### md转换
 
+关于Markdown文件转页面的处理，经过这个过程，我也是大致了解这些SSR框架的静态文件转换套路。
+
+首先我们定义一个接口，在项目里定义在了`api/posts/+server.ts`里，大致内容如下：
+
+```typescript
+import { fetchMarkdownPosts } from '../../utils/index.ts';
+import { json } from '@sveltejs/kit';
+
+export const GET = async () => {
+  const allPosts = await fetchMarkdownPosts();
+  return json(allPosts);
+};
+```
+
+fetchMarkdownPosts内容大致如下：
+```typescript
+import type Mdsvex from '*.md';
+
+const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
+const filePath = (path: string) => '/' + basename(path);
+
+export const fetchMarkdownPosts = async () => {
+	const componentFiles = import.meta.glob<Mdsvex>('/src/routes/docs/components/*.md');
+
+	const iterableComponentFiles = Object.entries(componentFiles);
+
+	const allComponents = await Promise.all(
+		iterableComponentFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver();
+			return {
+				meta: metadata,
+				path: filePath(path)
+			};
+		})
+	);
+
+	return {
+		components: allComponents,
+	};
+};
+```
+通过vite中的`import.meta.glob`抓取对应目录的所有md文件，再经过json序列化，于是我们便能拿到文件数据。
+
+
+然后再`doc/+layout.ts`里请求定义好的api，这里的`/api/posts`则对应了我们的api目录结构：
+```typescript
+export const load = async ({ fetch }) => {
+  try {
+    const response = await fetch('/api/posts');
+
+    return { posts: await response.json() };
+  } catch (error) {
+    console.error(`Error in load function for /: ${error}`);
+  }
+};
+```
+然后在`+layout.svelte`中对外`export let data;`，用来接收接口的请求，此时我们便能拿到markdown转化后的数据，剩余的便是对所有markdown文件的目录结构进行组织，用正确的路由进行导航。
+
+#### 组件功能演示
+关于markdown example的展示，组件的替换。mdx, mdsvexamples
+
+
+
+#### 搜索
 - algolia 搜索
 
 ## 测试
