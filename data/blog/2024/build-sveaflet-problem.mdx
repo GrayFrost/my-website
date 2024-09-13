@@ -115,6 +115,8 @@ export const load = async ({ fetch }) => {
 ```
 然后在`+layout.svelte`中对外`export let data;`，用来接收接口的请求，此时我们便能拿到markdown转化后的数据，剩余的便是对所有markdown文件的目录结构进行组织，用正确的路由进行导航。
 
+接着要把markdown数据正确展示到页面上，则用到了mdsvex这个库。
+
 #### 组件功能演示
 关于markdown example的展示，组件的替换。mdx, mdsvexamples
 
