@@ -128,6 +128,12 @@ export const load = async ({ fetch }) => {
 ## 测试
 
 ## 发布
-- npm包的发布
-- vercel部署
-- standard-version
+### npm包的发布
+standard-version
+
+### vercel部署
+相对于npm把lib目录下的内容发到npm上，vercel部署的东西则是把routes目录下的东西发到网上，给用户一个较为精美的浏览文档的界面。
+
+根据官方文档，我们只需要把`svelte.config.js`中的adapter替换为`@sveltejs/adapter-vercel`，然后在Vercel上关联Github上的Sveaflet项目就ok了。
+
+非常喜欢这种不用操心配置的部署的模式。
