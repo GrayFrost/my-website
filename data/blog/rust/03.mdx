@@ -1,0 +1,156 @@
+---
+title: Rust学习-3
+date: '2024-11-25'
+tags: ['rust']
+draft: false
+---
+
+基本数据结构类型
+
+## 结构体
+
+一个 struct 就是一些字段的集合。
+
+字段是一个与数据结构相关联的数据值。它的值可以是基本类型或结构体类型。
+
+```rust
+struct SeaCreature {
+    // String 是个结构体
+    animal_type: String,
+    name: String,
+    arms: i32,
+    legs: i32,
+    weapon: String,
+}
+```
+
+## 方法调用
+与函数（function）不同，方法（method）是与特定数据类型关联的函数。
+
+静态方法 — 属于某个类型，调用时使用 `::` 运算符。
+
+实例方法 — 属于某个类型的实例，调用时使用 `.` 运算符
+
+```rust
+fn main() {
+    // 使用静态方法来创建一个String实例
+    let s = String::from("Hello world!");
+    // 使用实例来调用方法
+    println!("{} is {} characters long.", s, s.len());
+}
+```
+
+## 类元祖结构体
+可以创建像元组一样被使用的结构体
+
+```rust
+struct Location(i32, i32);
+
+fn main() {
+    // 这仍然是一个在栈上的结构体
+    let loc = Location(42, 32);
+    println!("{}, {}", loc.0, loc.1);
+}
+```
+
+## 类单元结构体
+结构体也可以没有任何字段
+
+```rust
+struct Marker;
+
+fn main() {
+    let _m = Marker;
+}
+```
+
+## 枚举
+enum 关键字创建一个新类型，该类型的值可以包含几个带标记的元素
+
+```rust
+enum Species {
+    Crab,
+    Octopus,
+    Fish,
+    Clam
+}
+
+struct SeaCreature {
+    species: Species,
+    name: String,
+    arms: i32,
+    legs: i32,
+    weapon: String,
+}
+
+fn main() {
+    let ferris = SeaCreature {
+        species: Species::Crab,
+        name: String::from("Ferris"),
+        arms: 2,
+        legs: 4,
+        weapon: String::from("claw"),
+    };
+
+    match ferris.species {
+        Species::Crab => println!("{} is a crab",ferris.name),
+        Species::Octopus => println!("{} is a octopus",ferris.name),
+        Species::Fish => println!("{} is a fish",ferris.name),
+        Species::Clam => println!("{} is a clam",ferris.name),
+    }
+}
+
+```
+
+## 带数据的枚举
+enum 的元素可以有一个或多个数据类型，从而使其表现得像 C 语言中的联合。
+
+当使用 match 对一个 enum 进行模式匹配时，可以将变量名称绑定到每个数据值。
+
+```rust
+enum Species { Crab, Octopus, Fish, Clam }
+enum PoisonType { Acidic, Painful, Lethal }
+enum Size { Big, Small }
+enum Weapon {
+    Claw(i32, Size),
+    Poison(PoisonType),
+    None
+}
+
+struct SeaCreature {
+    species: Species,
+    name: String,
+    arms: i32,
+    legs: i32,
+    weapon: Weapon,
+}
+
+fn main() {
+    // SeaCreature's data is on stack
+    let ferris = SeaCreature {
+        // String struct is also on stack,
+        // but holds a reference to data on heap
+        species: Species::Crab,
+        name: String::from("Ferris"),
+        arms: 2,
+        legs: 4,
+        weapon: Weapon::Claw(2, Size::Small),
+    };
+
+    match ferris.species {
+        Species::Crab => {
+            match ferris.weapon {
+                Weapon::Claw(num_claws,size) => {
+                    let size_description = match size {
+                        Size::Big => "big",
+                        Size::Small => "small"
+                    };
+                    println!("ferris is a crab with {} {} claws", num_claws, size_description)
+                },
+                _ => println!("ferris is a crab with some other weapon")
+            }
+        },
+        _ => println!("ferris is some other animal"),
+    }
+}
+```
