@@ -1,11 +1,29 @@
+'use client'
+
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
+import { animate, scroll, inView } from 'motion'
+
+import { useEffect } from 'react'
 
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
+  useEffect(() => {
+    inView('.box', (info) => {
+      animate(
+        info.target,
+        {
+          opacity: [0, 0.2, 0.8, 1],
+          transform: ['translateX(-100px) ', 'none'],
+        },
+        { duration: 0.5, delay: 0.1 }
+      )
+    })
+  }, [])
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -22,7 +40,7 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="box py-12">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
